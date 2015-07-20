@@ -1,0 +1,233 @@
+<!doctype html>
+<html data-ng-app="blog">
+<head>
+  <meta charset="utf-8">
+  <title>NI Developer - A Software Developers blog based in Belfast, Northern Ireland</title>
+  <meta name="description" content="">
+
+  <!-- Mobile viewport optimized: h5bp.com/viewport -->
+  <meta name="viewport" content="width=device-width">
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+
+  <!-- All JavaScript at the bottom, except this Modernizr build.
+       Modernizr enables HTML5 elements & feature detects for optimal performance.
+       Create your own custom Modernizr build: www.modernizr.com/download/ -->
+  <script src="js/libs/modernizr-2.5.3.min.js"></script>
+</head>
+<body>
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+  <header class="main-header">
+      <section class="container">
+          <div class="row-fluid">
+            <div class="span4">
+                <img src="img/logo4.png" alt="NI Developer" />
+            </div>
+            <div class="span8">
+            </div>
+          </div>
+      </section>
+  </header>
+  <section id="search" class="bottom-border">
+      <div class="container">
+        <div class="row-fluid search-bar">
+            <div class="span7 navigation">
+                <div class="row-fluid padding-top">
+                    <div class="span3">
+                        <a href="#">
+                            Home
+                        </a>
+                    </div>
+                    <div class="span3">
+                        <a href="#">
+                            About
+                        </a>
+                    </div>
+                    <div class="span3">
+                        <a href="#">
+                            Blog
+                        </a>
+                    </div>
+                    <div class="span3">
+                        <a href="#">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="span1"></div>
+            <div class="span4 search padding-top">
+                <form action="http://www.nideveloper.co.uk/blog/search" name="searchform" method="post" onsubmit="return callSearch();">
+                    <div class="input-append">
+			            <input type="text" name="search" id="searchBox" placeholder="Search Here..." style="background:#f2f2f2;">
+                        <button class="btn btn-success" type="button">
+                            Search
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+      </div>
+  </section>
+  <div role="main">
+    <section class="container">
+        <div class="row-fluid">
+            <div class="span12 jumbotron">
+                <h2>
+                    Welcome to NI Developer, A Software Developers Blog based in Belfast, Northern Ireland
+                </h2>
+                <br />
+                <code>if(visitor.type !=== 'software developer'){ return toGoogle; }</code>
+            </div>
+        </div>
+        <section class="padding-bottom" id="current-technologies">
+            <h3>
+                Technologies I currently Like
+            </h3>
+            <div class="row-fluid img-row bottom-border">
+                <div class="span3">
+                    <img src="http://nodeblog.files.wordpress.com/2011/07/nodejs.png" alt="node.js" class="visible-desktop"/>
+                    <h4>
+                        Node.js
+                    </h4>
+                    <p>
+                        Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications.
+                        Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.
+                    </p>
+                </div>
+                <div class="span3">
+                    <img src="http://playlatam.files.wordpress.com/2012/03/normal.png" alt="node.js" class="visible-desktop"/>
+                    <h4>
+                        Play Framework
+                    </h4>
+                    <p>
+                        Play Framework makes it easy to build web applications with Java & Scala.
+                        Play is based on a lightweight, stateless, web-friendly architecture.
+                        Built on Akka, Play provides predictable and minimal resource consumption (CPU, memory, threads) for highly-scalable applications.
+                    </p>
+                </div>
+                <div class="span3">
+                    <img src="http://twitter.github.com/bootstrap/assets/img/bs-docs-twitter-github.png" alt="node.js" class="visible-desktop"/>
+                    <h4>
+                        Twitter Bootstrap + Github
+                    </h4>
+                    <p>
+                        <strong>Bootstrap</strong> - Sleek, intuitive, and powerful front-end framework for faster and easier web development
+                    </p>
+                    <p>
+                        <strong>Github</strong> - Powerful collaboration, review, and code management for open source and private development projects.
+                    </p>
+                </div>
+                <div class="span3">
+                    <img src="http://3.bp.blogspot.com/-JFOJ-k6tLnA/TsiKgBYPvqI/AAAAAAAAAT8/dGXeu0LeuTE/s1600/backbone-js-logo.png" alt="node.js" class="visible-desktop"/>
+                    <h4>
+                        Backbone.js
+                    </h4>
+                    <p>
+                        Backbone.js gives structure to web applications by providing models with key-value binding and custom events, collections with a rich API of enumerable functions, views with declarative event handling, and connects it all to your existing API over a RESTful JSON interface
+                    </p>
+                </div>
+            </div>
+        </section>
+        <div class="row-fluid">
+            <section id="twitter" class="span4">
+                <h3 class="page-list-header primary-background well well-small">
+                    @NIDeveloper Tweets
+                </h3>
+                <ul class="page-list">
+                    <li>
+                        <blockquote>
+                            <p>Building a new Blog <a href="https://twitter.com/search?q=%23yolo">#yolo</a></p>
+                            <small>01/01/2013 12:01</small>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <blockquote>
+                            <p>Twitter Bootstrap is awesome!</p>
+                            <small>01/01/2013 12:01</small>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <blockquote>
+                            <p><a href="https://twitter.com/NIDeveloper">@NIDeveloper</a> Nice new site design</p>
+                            <small>Retweeted 01/01/2013 12:01</small>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <blockquote>
+                            <p>Another example tweet</p>
+                            <small>01/01/2013 12:01</small>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <blockquote>
+                            <p>This is the final tweet in the list <a href="https://twitter.com/search?q=%23done">#done</a></p>
+                            <small>01/01/2013 12:01</small>
+                        </blockquote>
+                    </li>
+                </ul>
+            </section>
+            <section id="blog-posts" class ="span4" data-ng-controller="blogController as blog">
+                <h3 class="page-list-header secondary-background well well-small">
+                    Latest Blog Posts
+                </h3>
+                <ul class="page-list">
+                    <li data-ng-repeat="post in blog.posts">
+                        <a data-ng-href="/blog/post/{{post.ID}}">{{post.Name}}</a>
+                    </li>
+                </ul>
+            </section>
+            <section id="newsletters" class="span4">
+                <h3 class="page-list-header tertiary-background well well-small">
+                    Top 5 Newsletters
+                </h3>
+                <ul class="page-list">
+                    <li>
+                        <a href="http://html5weekly.com/">Html5 Weekly</a>
+                    </li>
+                    <li>
+                        <a href="http://html5weekly.com/">Javascript Weekly</a>
+                    </li>
+                    <li>
+                        <a href="http://html5weekly.com/">Responsive Design Weekly</a>
+                    </li>
+                    <li>
+                        <a href="http://html5weekly.com/">Web Design Weekly</a>
+                    </li>
+                    <li>
+                        <a href="http://html5weekly.com/">Hacker Newsletter</a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </section>
+  </div>
+  <footer class="top-border padding-top">
+      <section class="container">
+        <div class="row-fluid">
+            <div class="span12">
+                <a href="http://www.w3.org/html/logo/">
+                    <img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics">
+                </a>
+            </div>
+        </div>
+      </section>
+  </footer>
+
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- scripts concatenated and minified via build script -->
+  <script src="js/libs/angular.min.js"></script>
+  <script src="js/script.js"></script>
+  <!-- end scripts -->
+
+</body>
+</html>
