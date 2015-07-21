@@ -5,7 +5,8 @@ var app = angular.module('blog', []);
 
 			// Return public API.
 			return({
-				getPosts: getPosts
+				getPosts: getPosts,
+                getTweets: getTweets
 			});
 
 
@@ -19,9 +20,21 @@ var app = angular.module('blog', []);
 
 				var request = $http({
 					method: "get",
-					url: "http://localhost:3000/posts",
+					url: "http://localhost:3000/api/posts",
 					params: {
-						action: "get"
+					}
+				});
+
+				return( request.then( handleSuccess, handleError ) );
+
+			}
+
+            function getTweets() {
+
+				var request = $http({
+					method: "get",
+					url: "http://localhost:3000/twitter/nideveloper",
+					params: {
 					}
 				});
 
@@ -87,4 +100,24 @@ var app = angular.module('blog', []);
         }
 
         blogController.loadPosts();
+    });
+
+    app.controller('tweetController', function ($scope, blogService) {
+        var tweetController = this;
+
+        tweetController.tweets = [];
+
+        function applyRemoteData( tweets ) {
+			tweetController.tweets = tweets;
+		}
+
+        tweetController.loadTweets = function () {
+            blogService.getTweets().then(
+					function( tweets ) {
+						applyRemoteData(tweets);
+					}
+				);
+        }
+
+        tweetController.loadTweets();
     });

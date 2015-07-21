@@ -137,39 +137,15 @@
             </div>
         </section>
         <div class="row-fluid">
-            <section id="twitter" class="span4">
+            <section id="twitter" class="span4" data-ng-controller="tweetController as tweetController">
                 <h3 class="page-list-header primary-background well well-small">
                     @NIDeveloper Tweets
                 </h3>
                 <ul class="page-list">
-                    <li>
+                    <li data-ng-repeat="tweet in tweetController.tweets | limitTo:5">
                         <blockquote>
-                            <p>Building a new Blog <a href="https://twitter.com/search?q=%23yolo">#yolo</a></p>
-                            <small>01/01/2013 12:01</small>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <blockquote>
-                            <p>Twitter Bootstrap is awesome!</p>
-                            <small>01/01/2013 12:01</small>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <blockquote>
-                            <p><a href="https://twitter.com/NIDeveloper">@NIDeveloper</a> Nice new site design</p>
-                            <small>Retweeted 01/01/2013 12:01</small>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <blockquote>
-                            <p>Another example tweet</p>
-                            <small>01/01/2013 12:01</small>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <blockquote>
-                            <p>This is the final tweet in the list <a href="https://twitter.com/search?q=%23done">#done</a></p>
-                            <small>01/01/2013 12:01</small>
+                            <p>{{tweet.text}}</p>
+                            <small>{{tweet.created_at}}</small>
                         </blockquote>
                     </li>
                 </ul>
