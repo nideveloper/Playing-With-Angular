@@ -1,5 +1,5 @@
 <!doctype html>
-<html data-ng-app="blog">
+<html>
 <head>
   <meta charset="utf-8">
   <title>NI Developer - A Software Developers blog based in Belfast, Northern Ireland</title>
@@ -20,7 +20,7 @@
        Create your own custom Modernizr build: www.modernizr.com/download/ -->
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
 </head>
-<body>
+<body data-ng-app="blog">
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
@@ -142,7 +142,7 @@
                     @NIDeveloper Tweets
                 </h3>
                 <ul class="page-list">
-                    <li data-ng-repeat="tweet in tweetController.tweets | limitTo:5">
+                    <li data-ng-repeat="tweet in tweetController.twitterModel.tweets | limitTo:5">
                         <blockquote>
                             <p>{{tweet.text}}</p>
                             <small>{{tweet.created_at}}</small>
@@ -155,7 +155,7 @@
                     Latest Blog Posts
                 </h3>
                 <ul class="page-list">
-                    <li data-ng-repeat="post in blog.posts">
+                    <li data-ng-repeat="post in blog.blogModel.posts">
                         <a data-ng-href="/blog/post/{{post.ID}}">{{post.Name}}</a>
                     </li>
                 </ul>
@@ -202,7 +202,14 @@
 
   <!-- scripts concatenated and minified via build script -->
   <script src="js/libs/angular.min.js"></script>
-  <script src="js/script.js"></script>
+
+  <script src="app/blog/blogModel.js"></script>
+  <script src="app/blog/blogService.js"></script>
+  <script src="app/blog/blogController.js"></script>
+
+  <script src="app/twitter/twitterModel.js"></script>
+  <script src="app/twitter/twitterService.js"></script>
+  <script src="app/twitter/twitterController.js"></script>
   <!-- end scripts -->
 
 </body>
