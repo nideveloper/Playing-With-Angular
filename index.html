@@ -41,12 +41,12 @@
             <div class="span7 navigation">
                 <div class="row-fluid padding-top">
                     <div class="span3">
-                        <a href="#">
+                        <a data-ng-href="#/">
                             Home
                         </a>
                     </div>
                     <div class="span3">
-                        <a href="#">
+                        <a data-ng-href="#/about">
                             About
                         </a>
                     </div>
@@ -77,113 +77,7 @@
       </div>
   </section>
   <div role="main">
-    <section class="container">
-        <div class="row-fluid">
-            <div class="span12 jumbotron">
-                <h2>
-                    Welcome to NI Developer, A Software Developers Blog based in Belfast, Northern Ireland
-                </h2>
-                <br />
-                <code>if(visitor.type !=== 'software developer'){ return toGoogle; }</code>
-            </div>
-        </div>
-        <section class="padding-bottom" id="current-technologies">
-            <h3>
-                Technologies I currently Like
-            </h3>
-            <div class="row-fluid img-row bottom-border">
-                <div class="span3">
-                    <img src="http://nodeblog.files.wordpress.com/2011/07/nodejs.png" alt="node.js" class="visible-desktop"/>
-                    <h4>
-                        Node.js
-                    </h4>
-                    <p>
-                        Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications.
-                        Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.
-                    </p>
-                </div>
-                <div class="span3">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/AngularJS_logo.svg" alt="Angular JS" class="visible-desktop"/>
-                    <h4>
-                        Angular JS
-                    </h4>
-                    <p>
-                        AngularJS is what HTML would have been, had it been designed for building web-apps.
-                        Declarative templates with data-binding, MVW, MVVM, MVC, dependency injection and great
-                        testability story all implemented with pure client-side JavaScript!
-                    </p>
-                </div>
-                <div class="span3">
-                    <img src="https://spring.io/img/spring-by-pivotal.png" alt="Spring" class="visible-desktop"/>
-                    <h4>
-                        Spring
-                    </h4>
-                    <p>
-                        Spring helps development teams everywhere build simple, portable,  fast and flexible JVM-based systems and applications.
-                    </p>
-                </div>
-                <div class="span3">
-                    <img src="http://getbootstrap.com/2.3.2/assets/img/bs-docs-twitter-github.png" alt="node.js" class="visible-desktop"/>
-                    <h4>
-                        Twitter Bootstrap + Github
-                    </h4>
-                    <p>
-                        <strong>Bootstrap</strong> - Sleek, intuitive, and powerful front-end framework for faster and easier web development
-                    </p>
-                    <p>
-                        <strong>Github</strong> - Powerful collaboration, review, and code management for open source and private development projects.
-                    </p>
-                </div>
-            </div>
-        </section>
-        <div class="row-fluid">
-            <section id="twitter" class="span4" data-ng-controller="tweetController as tweetController">
-                <h3 class="page-list-header primary-background well well-small">
-                    @NIDeveloper Tweets
-                </h3>
-                <ul class="page-list">
-                    <li data-ng-repeat="tweet in tweetController.twitterModel.tweets | limitTo:5">
-                        <blockquote>
-                            <p>{{tweet.text}}</p>
-                            <small>{{tweet.created_at}}</small>
-                        </blockquote>
-                    </li>
-                </ul>
-            </section>
-            <section id="blog-posts" class ="span4" data-ng-controller="blogController as blog">
-                <h3 class="page-list-header secondary-background well well-small">
-                    Latest Blog Posts
-                </h3>
-                <ul class="page-list">
-                    <li data-ng-repeat="post in blog.blogModel.posts">
-                        <a data-ng-href="/blog/post/{{post.ID}}">{{post.Name}}</a>
-                    </li>
-                </ul>
-            </section>
-            <section id="newsletters" class="span4">
-                <h3 class="page-list-header tertiary-background well well-small">
-                    Top 5 Newsletters
-                </h3>
-                <ul class="page-list">
-                    <li>
-                        <a href="http://html5weekly.com/">Html5 Weekly</a>
-                    </li>
-                    <li>
-                        <a href="http://html5weekly.com/">Javascript Weekly</a>
-                    </li>
-                    <li>
-                        <a href="http://html5weekly.com/">Responsive Design Weekly</a>
-                    </li>
-                    <li>
-                        <a href="http://html5weekly.com/">Web Design Weekly</a>
-                    </li>
-                    <li>
-                        <a href="http://html5weekly.com/">Hacker Newsletter</a>
-                    </li>
-                </ul>
-            </section>
-        </div>
-    </section>
+    <div data-ng-view ></div>
   </div>
   <footer class="top-border padding-top">
       <section class="container">
@@ -202,6 +96,9 @@
 
   <!-- scripts concatenated and minified via build script -->
   <script src="js/libs/angular.min.js"></script>
+  <script src="js/libs/angular-route.min.js"></script>
+
+  <script src="js/app.js"></script>
 
   <script src="app/blog/blogModel.js"></script>
   <script src="app/blog/blogService.js"></script>
@@ -210,6 +107,8 @@
   <script src="app/twitter/twitterModel.js"></script>
   <script src="app/twitter/twitterService.js"></script>
   <script src="app/twitter/twitterController.js"></script>
+
+  
   <!-- end scripts -->
 
 </body>

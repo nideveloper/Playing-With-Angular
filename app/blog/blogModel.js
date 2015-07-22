@@ -1,4 +1,4 @@
-var blogApp = angular.module('blog', []);
+var blogApp = angular.module('blog');
 
 blogApp.config(function($httpProvider) {
   $httpProvider.defaults.useXDomain = true;
