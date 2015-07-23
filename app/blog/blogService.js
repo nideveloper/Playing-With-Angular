@@ -2,7 +2,8 @@ angular.module('blog').service("blogService", function($http, $q) {
 
 	// Return public API.
 	return({
-		getPosts: getPosts
+		getPosts: getPosts,
+        getCategories: getCategories
 	});
 
 
@@ -17,6 +18,19 @@ angular.module('blog').service("blogService", function($http, $q) {
 		var request = $http({
 			method: "get",
 			url: "https://enigmatic-headland-6062.herokuapp.com/api/posts",
+			params: {
+			}
+		});
+
+		return( request.then( handleSuccess, handleError ) );
+
+	}
+
+    function getCategories() {
+
+		var request = $http({
+			method: "get",
+			url: "https://enigmatic-headland-6062.herokuapp.com/api/categories",
 			params: {
 			}
 		});

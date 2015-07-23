@@ -1,0 +1,30 @@
+<div class="container" style="padding-top:20px;">
+	<div class="row" data-ng-controller="blogController as blog">
+        <section id="blog-categories" class ="span4">
+            <h3 class="page-list-header primary-background well well-small">
+                Blog Categories
+            </h3>
+            <ul class="page-list">
+                <li data-ng-repeat="category in blog.blogModel.categories">
+                    <a data-ng-href="#/blog/category/{{category.ID}}">{{category.Name}}</a>
+                    <p>
+                        {{category.Description}}
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section id="blog-posts" class="span8">
+            <h3 class="page-list-header secondary-background well well-small">
+                Latest Blog Posts
+            </h3>
+            <ul class="page-list">
+                <li data-ng-repeat="post in blog.blogModel.posts">
+                    <a data-ng-href="#/blog/post/{{post.ID}}">{{post.Name}}</a>
+                    <p>
+                        {{post.Description}}
+                    </p>
+                </li>
+            </ul>
+        </section>
+    </div>
+</div>

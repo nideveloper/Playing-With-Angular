@@ -15,6 +15,12 @@ angular
       .when('/about', {
         templateUrl: 'views/about.html'
       })
+      .when('/blog', {
+        templateUrl: 'views/blog/overview.html'
+      })
+      .when('/blog/post/:id', {
+        templateUrl: 'views/blog/post.html'
+      })
       .otherwise({
         redirectTo: '/'
       });
